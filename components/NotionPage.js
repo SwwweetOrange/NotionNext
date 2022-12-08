@@ -5,7 +5,6 @@ import React from 'react'
 import { isBrowser } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Code } from 'react-notion-x/build/third-party/code'
 
 const Equation = dynamic(() =>
   import('react-notion-x/build/third-party/equation').then(async (m) => {
@@ -19,6 +18,9 @@ const Pdf = dynamic(
   {
     ssr: false
   }
+)
+const Code = dynamic(
+  () => import('react-notion-x/build/third-party/code').then(m => m.Code)
 )
 
 // https://github.com/txs
